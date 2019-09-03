@@ -1,3 +1,4 @@
+## Structure
 src/
 	controllers/
 		UserController.js
@@ -11,9 +12,10 @@ src/
 	app.js
 	routes.js
 	server.js
-	
+
 ... config files
 
+## Steps
 src/
 	app.js
 		- Create a class App
@@ -22,17 +24,25 @@ src/
 			- express.json()
 			- routes
 		- Exports new App().server
-		
+
 	server.js
 		- import app from 'app.js'
 		- Run the server using app.listen(3333)
-		
+
 	routes.js
 		- import { Router } from 'express'
 		- Set const routes = new Router()
 		- Create methods routes.(get | post | put | delete)
 		- Import the Controllers and use it's methods
 			example: routes.get('/users', UserController.store)
-			
-	
-		
+
+
+## Controllers
+- Never call another controller / method
+- Always return a JSON
+- Can only have 5 methods:
+  - index()   List Users
+  - show()    Show User
+  - store()   Create User
+  - update()  Update User
+  - delete()  Delete User
